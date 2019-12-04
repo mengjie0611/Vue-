@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>08_条件渲染</title>
+</head>
+<body>
+<!--
+1. 条件渲染指令
+  v-if
+  v-else
+  v-show
+2. 比较v-if与v-show
+  如果需要频繁切换 v-show 较好
+-->
+
+<div id="demo">
+  <p v-if="ok">美美哒</p>
+  <p v-else>臭臭哒</p>
+  <button @click = 'change'>试试改变</button>
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+new Vue({
+  el:'#demo',
+  data:{
+    ok:true
+  },
+  methods: {
+    change(){
+      this.ok = !this.ok
+    }
+  },
+})
+</script>
+</body>
+</html>
